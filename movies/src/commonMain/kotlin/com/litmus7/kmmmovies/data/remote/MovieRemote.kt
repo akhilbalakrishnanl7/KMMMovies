@@ -4,7 +4,12 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * Data class holds selected data from api response
+ * This is a data class called MovieRemote that is annotated with @Serializable. This means that the class can be serialized and
+ * deserialized using the kotlin serialization library.
+ *
+ * The @SerialName annotation is used to change the name of the property that is used in the serialized representation of the object.
+ * Here the poster_path property in the JSON response will be mapped to the posterImage property in the Kotlin object. It represents
+ * the movie data.
  */
 @Serializable
 internal data class MovieRemote(
