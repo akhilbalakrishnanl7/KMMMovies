@@ -5,20 +5,26 @@ plugins {
     alias(libs.plugins.androidLibrary)
 
     alias(libs.plugins.kotlinxSerialization)
+    id("maven-publish")
+    alias(libs.plugins.swiftPackageBuilder)
 }
+
+group = "com.litmus7.kmmmovies"
+version = "0.0.1"
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
 kotlin {
     targetHierarchy.default()
 
     androidTarget {
+        publishLibraryVariants("release", "debug")
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -26,6 +32,13 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "movies"
+        }
+    }
+
+    multiplatformSwiftPackage {
+        swiftToolsVersion("5.3")
+        targetPlatforms {
+            iOS { v("13") }
         }
     }
 
@@ -55,7 +68,7 @@ kotlin {
             }
         }
         val iosMain by getting {
-            dependencies{
+            dependencies {
                 implementation(libs.ktor.client.darwin)
             }
         }

@@ -8,6 +8,7 @@ compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
 kotlinxCoroutinesCore = "1.7.3"
 ktorClientCore = "2.3.5"
+multiplatform-swiftpackage = "2.0.3"
 
 [libraries]
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinCore" }
@@ -33,3 +34,4 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+swiftPackageBuilder = { id = "com.chromaticnoise.multiplatform-swiftpackage", version.ref = "multiplatform-swiftpackage" }
